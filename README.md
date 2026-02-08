@@ -54,5 +54,3 @@ The project includes screenshots for:
 - Prometheus, Grafana, Loki, and Promtail dashboards
 - Real-time metrics and logs in Grafana
 
-*(Place your images in the*
-
