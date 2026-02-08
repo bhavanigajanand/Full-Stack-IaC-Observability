@@ -44,13 +44,49 @@ This project demonstrates a complete **end-to-end DevOps / SRE observability set
 
 ## 📸 Screenshots
 
-The project includes screenshots for:
-- Terraform `init`, `plan`, and `apply`
-- EC2 instance running in AWS
-- Security Groups and opened ports
-- SSH access to EC2
-- Docker & Docker Compose installation
-- Docker Compose build & running containers
-- Prometheus, Grafana, Loki, and Promtail dashboards
-- Real-time metrics and logs in Grafana
+![Terraform Init](screenshots/terraform-init.png)
+![Docker Installed](screenshots/docker-install.png)
+![Containers Running](screenshots/containers-running.png)
+![App Response](screenshots/app-response.png)
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+---
+
+## 📊 Observability Features
+
+- Metrics scraping with **Prometheus**
+- Dashboards in **Grafana**
+- Centralized logging with **Loki**
+- Log shipping with **Promtail**
+- Real-time monitoring of live workloads
+
+---
+
+## 🎯 Key Demonstrations
+
+- Provisioning cloud infrastructure with **Terraform**
+- Automated EC2 bootstrapping using **User Data**
+- Running a full observability stack via **Docker Compose**
+- Monitoring system & application metrics
+- Centralized log aggregation
+- Integrating **Cloud + Containers + Observability**
+
+---
+
+## 📌 Future Improvements
+
+- Add **Alertmanager** for alerts
+- Implement **Auto Scaling Group** + Load Balancer
+- Enable **HTTPS** via Nginx / Traefik
+- Integrate **CI/CD** (GitHub Actions)
+- Use **S3 + DynamoDB** for Terraform remote state
+- Add authentication to Grafana
+- Build advanced dashboards
+
+---
+
+## 👤 Author
+
+**Bhavani Gajanand**  
+GitHub: [https://github.com/bhavanigajanand](https://github.com/bhavanigajanand)
 
