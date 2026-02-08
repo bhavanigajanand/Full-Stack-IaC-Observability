@@ -1,0 +1,4 @@
+echo "vpro-monitoring-key.pem" >> .gitignore
+echo "*.tfstate*" >> .gitignore
+echo ".terraform/" >> .gitignore
+echo "*.pem" >> .gitignore
