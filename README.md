@@ -1,55 +1,146 @@
-# Full-Stack IaC & Observability Suite
+🚀 Full-Stack IaC Observability on AWS with Terraform, Docker, Prometheus, Grafana & Loki
 
-A DevOps project focused on automated infrastructure provisioning and a complete observability pipeline (**Prometheus, Grafana, Loki**) on AWS.
+This project demonstrates a complete end-to-end DevOps / SRE observability setup using Infrastructure as Code (Terraform) and a containerized monitoring stack on AWS EC2 (Frankfurt / eu-central-1).
 
-## 🚀 Project Overview
-This project demonstrates how to provision an AWS EC2 instance in the Frankfurt region (`eu-central-1`) using **Terraform** and automatically prepare it for containerized workloads. By using **EC2 User Data**, the system arrives pre-configured with Docker and Docker Compose, ready to host a full monitoring stack.
+It covers:
 
-### Key Features
-* **Infrastructure as Code:** Provisioning a t3.micro instance and custom Security Groups via Terraform.
-* **Automated Bootstrapping:** Used User Data scripts to install Docker (v29.2.1) and Docker Compose (v5.0.2) upon launch.
-* **Full-Stack Monitoring:** Integrated Prometheus for metrics collection and Grafana Loki for log aggregation.
-* **Stress Analysis:** Tested the system under load to validate real-time alerting and dashboard accuracy.
+Automated EC2 provisioning with Terraform
 
----
+Bootstrapping EC2 with User Data (Docker & Docker Compose install)
 
-## 🛠️ Tech Stack
-* **Cloud:** AWS (EC2, Security Groups)
-* **IaC:** Terraform
-* **Containerization:** Docker & Docker Compose
-* **Observability:** Prometheus, Loki, Promtail, and Grafana
+Running a Python application in Docker
 
----
+Collecting metrics with Prometheus
 
-## ⚙️ Infrastructure & Security
-The Terraform configuration automates the creation of the instance and a Security Group with the following ingress rules to allow monitoring traffic:
+Visualizing dashboards with Grafana
 
-| Service | Port | Description |
-| :--- | :--- | :--- |
-| **SSH** | 22 | Remote Management |
-| **Web App** | 8080 | Flask Application UI |
-| **Grafana** | 3000 | Visualization Dashboards |
-| **Prometheus**| 9090 | Metrics Time-Series DB |
-| **Loki** | 3100 | Log Aggregation Engine |
+Aggregating logs with Loki + Promtail
 
----
+Verifying everything using stress/load testing
 
-## 📊 Observability in Action
+End-to-end validation with real running containers and dashboards
 
-After launching the stack, I performed a stress test to see how the monitoring tools reacted. 
+🧱 High-Level Architecture
 
-* **Baseline:** The app started at ~45 requests per minute.
-* **Stress Performance:** Under load, traffic spiked to **245 requests per minute**, visualized instantly on the Grafana dashboard.
-* **Log Correlation:** Used Loki and Promtail to verify that application logs were being ingested correctly during the traffic surge.
+Terraform provisions:
 
-### Metrics & Dashboards
-![Baseline Metrics](05Dashboards.jpg)
-*Visualizing the transition from baseline to stress performance.*
+EC2 instance in eu-central-1
 
----
+Security Groups (ports for SSH, Grafana, Prometheus, Loki, App)
 
-### 📝 Note on the Application
-The Python Flask application used in this project was sourced online to serve as a generator for metrics and logs. The primary focus of this project is the **IaC automation** and the **configuration of the observability stack** (Prometheus/Loki/Grafana) rather than the application development itself.
+User Data script (userdata.sh) to install Docker & Docker Compose
 
----
-**Developed by:** Bhavani Gajanand
+On EC2 boot:
+
+Docker and Docker Compose are installed automatically
+
+Using Docker Compose, the following services are started:
+
+Grafana (Dashboards & Visualization)
+
+Prometheus (Metrics)
+
+Loki (Logs)
+
+Promtail (Log shipper)
+
+Python App (Sample workload)
+
+Load is generated to:
+
+Produce CPU & application metrics
+
+Generate logs
+
+Visualize everything in Grafana dashboards
+
+🛠️ Tech Stack
+
+Cloud: AWS EC2 (eu-central-1 / Frankfurt)
+
+IaC: Terraform
+
+OS: Ubuntu on EC2
+
+Containers: Docker, Docker Compose
+
+Monitoring: Prometheus
+
+Visualization: Grafana
+
+Logging: Loki, Promtail
+
+Application: Python (containerized)
+
+📸 Screenshots
+
+This project includes real screenshots showing:
+
+Terraform init, plan, and apply output
+
+EC2 instance running in AWS (Frankfurt region)
+
+Security Groups with opened ports
+
+SSH access to the EC2 instance
+
+Docker and Docker Compose versions installed
+
+Docker Compose build and containers running
+
+Prometheus, Grafana, Loki, and Promtail containers
+
+Grafana dashboards with metrics
+
+Loki logs visible in Grafana
+
+(You can place your images in the repository and reference them here, for example: screenshots/terraform-apply.png, screenshots/grafana-dashboard.png, etc.)
+
+📊 Observability Features
+
+Metrics scraping with Prometheus
+
+Dashboards in Grafana
+
+Log aggregation with Loki
+
+Log shipping with Promtail
+
+Real containers running on EC2
+
+Real-time monitoring of a live workload
+
+🎯 What This Project Demonstrates
+
+Infrastructure provisioning with Terraform
+
+Automated bootstrapping using EC2 User Data
+
+Running a full observability stack with Docker Compose
+
+Monitoring applications and system metrics
+
+Centralized logging with Loki
+
+Cloud + Containers + Observability integration
+
+📌 Future Improvements
+
+Add Alertmanager for alerts
+
+Add Auto Scaling Group + Load Balancer
+
+Add HTTPS with Nginx / Traefik
+
+Add CI/CD (GitHub Actions)
+
+Use S3 + DynamoDB for Terraform remote state
+
+Add authentication to Grafana
+
+Add more advanced dashboards
+
+👤 Author
+
+Bhavani Gajanand
+GitHub: https://github.com/bhavanigajanand
