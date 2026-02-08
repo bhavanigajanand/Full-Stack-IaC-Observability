@@ -52,4 +52,4 @@ After launching the stack, I performed a stress test to see how the monitoring t
 The Python Flask application used in this project was sourced online to serve as a generator for metrics and logs. The primary focus of this project is the **IaC automation** and the **configuration of the observability stack** (Prometheus/Loki/Grafana) rather than the application development itself.
 
 ---
-**Developed by:** [Your Name/GitHub Profile]
+**Developed by:** Bhavani Gajanand
